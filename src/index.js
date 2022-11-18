@@ -8,7 +8,8 @@ import CurrencyConversion from './currency-conversion';
 
 async function getConversion(country, currAmt) {
   const response = await ConversionService.getConversion();
-  const convAmt = CurrencyConversion.getCurrencyConversion(currAmt, response.conversion_rate.country);
+  const convAmt = CurrencyConversion.getCurrencyConversion(currAmt, response.conversion_rates[country]);
+  console.log(convAmt);
   if(response.conversion_rates) {
     printElements(country, convAmt, currAmt);
   } else {
@@ -19,11 +20,11 @@ async function getConversion(country, currAmt) {
 // UI Logic
 
 function printElements(country, conversion, exchangeAmt) {
-  document.querySelector("#showResponse").innerText = `The conversion of ${exchangeAmt} USD to ${country} is ${conversion}.`;
+  document.querySelector("#conversion").innerText = `The conversion of ${exchangeAmt} USD to ${country} is ${conversion}.`;
 }
 
 function printError(error, country) {
-  document.querySelector("#showResponse").innerText = `There was an error accessing the conversion rate for ${country}: ${error}`;
+  document.querySelector("#conversion").innerText = `There was an error accessing the conversion rate for ${country}: ${error}`;
 }
 
 function handleFormSubmission() {
