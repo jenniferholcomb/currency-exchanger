@@ -1,20 +1,15 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <script type="text/javascript" src="bundle.js"></script>
-  <title>Shape Tracker</title>
+  <title>Currency Exchanger</title>
 </head>
 <body>
-  <h3>Enter three lengths to determine if they can make a triangle.</h3>
-  <form id="triangle-checker-form">
-    <label for="length1">Enter a number:</label>
-    <input id="length1" type="number">
-    <label for="length2">Enter a number:</label>
-    <input id="length2" type="number">
-    <label for="length3">Enter a number:</label>
-    <input id="length3" type="number">
-    <button type="submit">Submit</button>
+  <h3>Enter US dollar amount.</h3>
+  <form id="exchange-form">
+    <label for="dollar-conversion">Enter amount in US dollar:</label>
+    <input id="dollar-conversion" type="number" min="0" name="dollar-conversion">
+    <button type="submit" class="btn-success" id="curr-conv">Submit</button>
   </form>
-  <div id="response"></div>
+  <div id="conversion"></div>
 </body>
 </html>

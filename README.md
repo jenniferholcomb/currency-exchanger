@@ -21,9 +21,10 @@
 ## Setup/Installation Requirements
 
 * Clone this repository to your desktop.
-* Acquire an API KEY from ____.
-* Add API_KEY to .env file.
-* Push .gitignore file to repo first.
+* Acquire a free API KEY from ExchangeRate-API (app.exchangerate-api.com/activate-account).
+* Create an .env file and add to .gitignore.
+* Add API KEY to .env file.
+* Push .gitignore to repo first.
 * $ npm install to install all package.
 * $ npm run build to build the project.
 * $ npm run start to compile the project.
