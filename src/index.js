@@ -13,8 +13,12 @@ import './css/styles.css';
 // }
 function handleFormSubmission() {
   event.preventDefault();
-  document.querySelector('#response').innerText = null;
- 
+  const currAmt = document.getElementById("dollar-conversion").value;
+  const country = document.getElementById("country").value;
+  console.log(currAmt);
+  console.log(country);
+  //document.querySelector('#response').innerText = null;
+  document.querySelector("#exchange-form").reset();
 }
 
 window.addEventListener("load", function() {
