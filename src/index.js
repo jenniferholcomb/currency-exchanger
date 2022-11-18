@@ -8,15 +8,23 @@ import CurrencyConversion from './currency-conversion';
 
 async function getConversion(country, currAmt) {
   const response = await ConversionService.getConversion();
-  const convAmt = CurrencyConversion.getCurrencyConversion(currAmt);
+  const convAmt = CurrencyConversion.getCurrencyConversion(currAmt, response.conversion_rate.country);
   if(response.conversion_rates) {
-    printElements(response.conversion_rates.country, convAmt);
+    printElements(country, convAmt, currAmt);
   } else {
-    printError(response);
+    printError(response, country);
   }
 }
 
-// UI Logid
+// UI Logic
+
+function printElements(country, conversion, exchangeAmt) {
+  document.querySelector("#showResponse").innerText = `The conversion of ${exchangeAmt} USD to ${country} is ${conversion}.`;
+}
+
+function printError(error, country) {
+  document.querySelector("#showResponse").innerText = `There was an error accessing the conversion rate for ${country}: ${error}`;
+}
 
 function handleFormSubmission() {
   event.preventDefault();
@@ -24,6 +32,7 @@ function handleFormSubmission() {
   const country = document.getElementById("country").value;
   console.log(currAmt);
   console.log(country);
+  getConversion(country, currAmt);
   document.querySelector("#dollar-conversion").innerText = null;
   //document.querySelector("#exchange-form").reset();
 }
