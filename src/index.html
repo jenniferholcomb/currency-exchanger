@@ -4,23 +4,26 @@
   <title>Currency Exchanger</title>
 </head>
 <body>
+<div id="curr-body">
   <h3>Enter US dollar amount.</h3>
   <form id="exchange-form">
-    <label for="dollar-conversion">Enter amount in US dollar:</label>
+    <label for="dollar-conversion">Enter exchange amount in US dollars:</label>
     <input id="dollar-conversion" type="text" name="dollar-conversion">
-    <select name="country" id="country">
-      <option value="">--Please select country--</option>
-      <option value="AUD">Australian Dollar</option>
-      <option value="BRL">Brazilian Real</option>
-      <option value="CAD">Canadian Dollar</option>
-      <option value="CNY">Chinese Yuan</option>
-      <option value="EUR">Euro</option>
-      <option value="INR">Indian Rupee</option>
-      <option value="CHF">Swiss Franc</option>
-      <option value="ZAR">South African Rand</option>
-    </select>
+      <!-- <select name="country" id="country">
+        <option value="">--Please select country--</option>
+        <option value="AUD">Australian Dollar</option>
+        <option value="BRL">Brazilian Real</option>
+        <option value="CAD">Canadian Dollar</option>
+        <option value="CNY">Chinese Yuan</option>
+        <option value="EUR">Euro</option>
+        <option value="INR">Indian Rupee</option>
+        <option value="CHF">Swiss Franc</option>
+        <option value="ZAR">South African Rand</option>
+      </select> -->
+      <select id="dollar-conversion"></select>
     <button type="submit" class="btn-success" id="curr-conv">Submit</button>
   </form>
   <div id="conversion"></div>
+</div>  
 </body>
 </html>

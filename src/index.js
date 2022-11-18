@@ -19,7 +19,7 @@ async function getConversion(country, currAmt) {
 // UI Logic
 
 function printElements(country, conversion, exchangeAmt) {
-  document.querySelector("#conversion").innerText = `The conversion of ${exchangeAmt} USD to ${country} is ${conversion}.`;
+  document.querySelector("#conversion").innerText = `${exchangeAmt} USD is equal to ${conversion} ${country}`;
 }
 
 function printError(error, country) {
@@ -31,13 +31,12 @@ function handleFormSubmission() {
   event.preventDefault();
   const currAmt = document.getElementById("dollar-conversion").value;
   const country = document.getElementById("country").value;
-  console.log(currAmt);
-  console.log(country);
   getConversion(country, currAmt);
   document.querySelector("#dollar-conversion").innerText = null;
   //document.querySelector("#exchange-form").reset();
 }
 
 window.addEventListener("load", function() {
+  document.getElementById("curr-body").addEventListener()
   document.getElementById("exchange-form").addEventListener("submit", handleFormSubmission);
 });
