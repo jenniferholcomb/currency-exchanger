@@ -54,13 +54,14 @@ import CurrencyConversion from './currency-conversion';
 
 async function makeConversion(country, currAmt) {
   const response = await ConversionService.getConversion();
-  console.log(response.conversion_rates);
+  console.log(response);
   if(response.conversion_rates) {
     const convAmt = CurrencyConversion.getCurrencyConversion(currAmt, response.conversion_rates[country]);
     printElements(country, convAmt, currAmt);
   } else {
     printError(response, country);
   }
+  sessionStorage.setItem("apiCall", response);
 }
 
 function printElements(country, conversion, exchangeAmt) {
@@ -80,19 +81,15 @@ function printError(error, country) {
 
 function handleFormSubmission() {
   event.preventDefault();
-  console.log("here");
   const currAmt = document.getElementById("dollar-conversion").value;
   const country = document.getElementById("country").value;
   makeConversion(country, currAmt);
-  const conversionService = new ConversionService();
-  console.log(conversionService);
-  //makeConversion(response, country, currAmt);
+  console.log(sessionStorage.getItem("apiCall"));
   document.querySelector("#dollar-conversion").innerText = null;
   //document.querySelector("#exchange-form").reset();
 }
 
 window.addEventListener("load", function() {
-
   document.getElementById("exchange-form").addEventListener("submit", handleFormSubmission);
 });
 
