@@ -45,14 +45,15 @@ import CurrencyConversion from './currency-conversion';
 
 // Business Logic
 
-async function getConversion() {
-  const response = await ConversionService.getConversion();
-  return response;
-}
+// async function getConversion() {
+//   const response = await ConversionService.getConversion();
+//   return response;
+// }
 
 // UI Logic
 
-async function makeConversion(response, country, currAmt) {
+async function makeConversion(country, currAmt) {
+  const response = await ConversionService.getConversion();
   console.log(response.conversion_rates);
   if(response.conversion_rates) {
     const convAmt = CurrencyConversion.getCurrencyConversion(currAmt, response.conversion_rates[country]);
@@ -80,15 +81,21 @@ function printError(error, country) {
 function handleFormSubmission() {
   event.preventDefault();
   console.log("here");
-  const response = getConversion();
   const currAmt = document.getElementById("dollar-conversion").value;
   const country = document.getElementById("country").value;
-  makeConversion(response, country, currAmt);
+  makeConversion(country, currAmt);
+  const conversionService = new ConversionService();
+  console.log(conversionService);
+  //makeConversion(response, country, currAmt);
   document.querySelector("#dollar-conversion").innerText = null;
   //document.querySelector("#exchange-form").reset();
 }
 
 window.addEventListener("load", function() {
 
-  document.getElementById("exchange-form").addEventListener("submit", handleFormSubmission());
+  document.getElementById("exchange-form").addEventListener("submit", handleFormSubmission);
 });
+
+// window.addEventListener("load", function() {
+//   document.getElementById("exchange-form").addEventListener("submit", handleFormSubmission);
+// });
