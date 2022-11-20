@@ -1,3 +1,32 @@
-body {
-  background-color: lightblue;
+p {
+  font-style: italic;
+  font-size: 18px;
+}
+
+select {
+  width: 240px;
+  font-size: smaller;
+  text-align: center;
+  font-weight: bold;
+  background-color: rgb(228, 237, 250);
+}
+
+.column1 {
+  width: 20%;
+  float: left;
+}
+
+.column2 {
+  width: 20%;
+  float: left;
+}
+
+.column3 {
+  width: 20%;
+  float: left;
+}
+
+.column4 {
+  width: 20%;
+  float: left;
 }

@@ -26,8 +26,10 @@ function populateDropDown() {
     let optionText = document.createTextNode(countryArr[i]);
     newOption.appendChild(optionText);
     newOption.setAttribute('value', countryArr[i]);
-    const select = document.querySelector('#country2');
-    select.appendChild(newOption);
+    const select1 = document.querySelector('#country1');
+    const select2 = document.querySelector('#country2');
+    select1.appendChild(newOption);
+    select2.appendChild(newOption);
     i++;
   });
 }
@@ -55,4 +57,7 @@ window.addEventListener("load", function() {
   document.getElementById("exchange-form").addEventListener("submit", handleFormSubmission);
 });
 
+// add API KEY to .env, adjust .js
+// figure out how to elimate "stacking" of columns in html
+// add elements to both drop down menus
 

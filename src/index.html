@@ -4,20 +4,28 @@
   <title>Currency Exchanger</title>
 </head>
 <body>
-<div id="curr-body">
-  <h3>Enter US dollar amount.</h3>
-  <form id="exchange-form">
-    <label for="dollar-conversion">Enter exchange amount in US dollars:</label>
-    <input id="dollar-conversion" type="text" name="dollar-conversion">
-    <div id="country">
-      <select name="country2" id="country2">
-        <option value="">--Please select country--</option>
-      </select>
-    </div>
+<h2><strong>CURRENCY EXCHANGER</strong></h2>
+<h4><em>Get exchange rate of any currency.</em></h4>
+<pre>   Choose your exchange currency, then select a currency to exchange to.</pre><br>
+<form id="exchange-form">
+  <div class="column1">
+    <select name="country1" id="country1">
+      <option value="">SELECT EXCHANGE CURRENCY</option>
+    </select>
+  </div> 
+  <div class="column2">
+    <input id="dollar-conversion" type="number" name="dollar-conversion" style="width: 240px" placeholder="(enter exchange amount here)">
+  </div>
+  <div class="column3">
+    <select name="country2" id="country2">
+      <option value="">SELECT NEW CURRENCY</option>
+    </select>
+  </div>
+  <div class="column4">
     <button type="submit" class="btn-success" id="curr-conv">Submit</button>
-  </form>
-  <div id="test"></div>
-  <div id="conversion"></div>
-</div>  
+  </div>
+</form>
+<div id="test"></div>
+<div id="conversion"></div> 
 </body>
 </html>
