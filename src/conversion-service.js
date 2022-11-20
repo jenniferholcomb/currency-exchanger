@@ -8,8 +8,6 @@ export default class ConversionService {
         const errorMessage = `${response.status} ${response.statusText} ${jsonifiedResponse['error-type']} ${jsonifiedResponse['extra-info']}`;
         throw new Error(errorMessage);
       }
-      // this.conversionRates = jsonifiedResponse.conversion_rates;
-      // console.log(this.conversionRates);
       return jsonifiedResponse;
     } catch(error) {
       return error;
