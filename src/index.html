@@ -9,7 +9,8 @@
   <form id="exchange-form">
     <label for="dollar-conversion">Enter exchange amount in US dollars:</label>
     <input id="dollar-conversion" type="text" name="dollar-conversion">
-      <select name="country" id="country">
+    <div id="country">
+      <select name="country2" id="country2">
         <option value="">--Please select country--</option>
         <option value="AUD">Australian Dollar</option>
         <!-- <option value="BRL">Brazilian Real</option>
@@ -20,6 +21,7 @@
         <option value="CHF">Swiss Franc</option>
         <option value="ZAR">South African Rand</option> -->
       </select>
+    </div>
     <button type="submit" class="btn-success" id="curr-conv">Submit</button>
   </form>
   <div id="test"></div>
