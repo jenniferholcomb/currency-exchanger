@@ -23,16 +23,17 @@ async function getConversion() {
 
 function populateDropDown() {
   const response = JSON.parse(sessionStorage.getItem("apiCall"));
-  //console.log(response.conversion_rates);
   const countryArr = Object.keys(response.conversion_rates);
-  document.querySelector("#test").innerText = countryArr[1];
-  let newOption = document.createElement("option");
-  let optionText = document.createTextNode(countryArr[1]);
-  newOption.appendChild(optionText);
-  newOption.setAttribute('value', countryArr[1]);
-  const select = document.querySelector('#country2');
-  select.appendChild(newOption);
-  //document.body.appendChild(p);
+  let i = 0;
+  countryArr.forEach(() => {
+    let newOption = document.createElement("option");
+    let optionText = document.createTextNode(countryArr[i]);
+    newOption.appendChild(optionText);
+    newOption.setAttribute('value', countryArr[i]);
+    const select = document.querySelector('#country2');
+    select.appendChild(newOption);
+    i++;
+  });
 }
 
 // function printElements(country, conversion, exchangeAmt) {
