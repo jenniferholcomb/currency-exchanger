@@ -33,7 +33,7 @@
 
 ## Known Bugs
 
-* No known bugs.
+* Formula for calculating exchange works only for converting USD to new currency.
 * If any issues are discovered, please email jenniferlholcomb@gmail.com.
 
 ## License
