@@ -23,7 +23,7 @@
 * Clone this repository to your desktop.
 * Acquire a free API KEY from ExchangeRate-API (app.exchangerate-api.com/activate-account).
 * Create an .env file and add to .gitignore.
-* Add API KEY to .env file.
+* Add API KEY to .env file. Text in .env file should read, API_KEY=[your API key here]
 * Push .gitignore to repo first.
 * $ npm install to install all package.
 * $ npm run build to build the project.
